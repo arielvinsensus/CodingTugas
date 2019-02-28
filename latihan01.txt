@@ -1,0 +1,15 @@
+> show database;
+> create database latihan1;
+> create table biodata(nama varchar(50),alamat text);
+> desc mahasiswa;
+
+> alter table biodata add column id int(10) fist;
+> desc biodata;
+
+> alter table biodata modify alamat_jalan tinytext;
+> desc biodata;
+
+> alter table mahasiswa add primary key(id);
+> desc biodata;
+
+> alter table biodata drop primary key;

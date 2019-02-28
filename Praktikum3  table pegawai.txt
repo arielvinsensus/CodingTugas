@@ -1,0 +1,37 @@
+> create table pegawai;
+> use pegawai;
+Ketik create table pegawai (idpegawai varchar(5), namadepan varchar(15), namabelakang varchar(15), email varchar(20), telepon varchar(15), tanggalkontrak date, idjob varchar(5), gaji int(7), tunjangan int(6));
+-Ketik alter table pegawai add primary key (idpegawai);
+-Ketik desc pegawai;
+-Membuat table isi data Insert
+` insert into pegawai (idpegawai, namadepan, namabelakang, email, telepon, tanggalkontrak, idjob, gaji, tunjangan) value ('E001','Ferry','Gustiawan','ferry@yahoo.com','07117059004','2005-09-01','L001','2000000','500000');
+
+`  insert into pegawai (idpegawai, namadepan, namabelakang, email, telepon, tanggalkontrak, idjob, gaji, tunjangan) value ('E002','Aris','Ganiardi','aris@yahoo.com','081312345678','2006-09-01','L002','2000000','200000');
+
+` insert into pegawai (idpegawai, namadepan, namabelakang, email, telepon, tanggalkontrak, idjob, gaji) value ('E003','Faiz','Ahmad','faiz@yahoo.com','081367384322','2006-10-01','L003','15000000');
+
+` insert into pegawai (idpegawai, namadepan, namabelakang, email, telepon, tanggalkontrak, idjob, gaji, tunjangan) value ('E004','Emma','Bunton','emma@yahoo.com','081363484342','2006-10-01','L004','1500000','0');
+
+`  insert into pegawai (idpegawai, namadepan, namabelakang, email, telepon, tanggalkontrak, idjob, gaji, tunjangan) value ('E005','Mike','Scoff','mike@plasa.com','08163454555','2007-09-01','L005','1250000','0');
+
+`  insert into pegawai (idpegawai, namadepan, namabelakang, email, telepon, tanggalkontrak, idjob, gaji) value ('E006','lincoln','Burrows','linc@yahoo.com','08527388432','2008-09-01','L006','1750000');
+
+> select * from pegawai;
+
+1.Untuk Menampilkan Pegawai yang gajinya bukan 2000000 dan 1250000
+	select * from pegawai where gaji <> 2000000 and gaji <>1250000;
+2.Untuk Menampilkan isi data yang di tunjangannya kosong/tidak di isi
+	select * from pegawai where tunjangan is NULL;
+3.Untuk Menampilkan isi data yang di tunjangannya kosong/tidak di isi
+	select * from pegawai where tunjangan is not NULL;
+4.Perintah yang di gunakan untuk menghitung jumlah baris suatu kolom pada tabel
+	select count(idpegawai)from pegawai;
+5.Perintah yang di gunakan untuk menghitung jumlah nilai suatu kolom pada tabel 
+	select sum(gaji)as jumlah from pegawai;
+6.Perintah yang di gunakan untuk menghitung jumlah nilai suatu kolom pada tabel 
+	select avg(gaji)as jumlah from pegawai;
+7.Perintah yang di gunakan untuk menghitung jumlah nilai suatu kolom pada tabel 
+	select min(gaji)as jumlah from pegawai;
+8.Perintah yang di gunakan untuk menghitung jumlah nilai suatu kolom pada tabel 
+	select max(gaji)as jumlah from pegawai;
+

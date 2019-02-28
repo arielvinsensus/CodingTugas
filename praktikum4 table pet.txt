@@ -1,0 +1,30 @@
+> create database pet;
+> use pet;
+> create table pet
+-Ketik create table pet (name varchar(10), owner varchar(10), spesies varchar(10), sex varchar(1), birth date, death date);
+-Ketik Membuat tabel Insert:
+` insert into pet (name, owner, spesies, sex, birth) value ('Puffball','Diane','Hamster','f','1994-03-17');
+` insert into pet (name, owner, spesies, sex, birth) value ('Claws','Gwen','Cat','m','1994-03-17');
+` insert into pet (name, owner, spesies, sex, birth) value ('Fluffy','Harold','Cat','f','1993-02-04');
+` insert into pet (name, owner, spesies, sex, birth) value ('Buffy','Harold','Dog','f','1989-05-13');
+` insert into pet (name, owner, spesies, sex, birth) value ('Fang','Benny','Dog','m','1990-08-27');
+` insert into pet (name, owner, spesies, sex, birth, death) value ('Bowser','Diane','Dog','m','1989-08-31','1995-07-29');
+` insert into pet (name, owner, spesies, sex, birth) value ('Chirpy','Gwen','Bird','f','1998-09-27');
+` insert into pet (name, owner, spesies,birth) value ('Whisler','Gwen','Bird','1997-12-09');
+` insert into pet (name, owner, spesies, sex, birth) value ('Slim','Benny','Snake','m','1996-04-29');
+
+-Ketik select * from pet;
+
+
+1.Untuk Menampilkan Hewan yang di miliki setiap owner
+	select owner, count(spesies) from pet group by owner;
+2.Untuk Menampilkan hewan berdasarkan spesies
+	select (spesies) from pet;
+3.Untuk Menampilkan hewan berdasarkan jenis kelamin
+	select sex, count(sex) from pet group by sex;
+4.Menampilkan hewan berdasarkan spesies dan jenis kelamin
+	select spesies,sex, count(spesies) as jumlah from pet group by spesies;
+5.Menampilkan berdasarkan spesies (cat and dog) dan jenis kelamin:
+	select spesies,sex, count(spesies) as jumlah from pet where(spesies="cat" or spesies="dog") group 	by sex,spesies;
+6.Tampilan jumlah hewan berdasarkan jenis kelamin yang di ketahui saja
+	select sex, spesies from pet where sex is not null group by sex, spesies;
